@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <link rel="stylesheet" type="text/css" href="./test.css">
+    <style>
+
+    </style>
+</head>
+<body>
+      <div class="grid-container">
+          <div class="item1">
+                <a href="#default" class="logo">CompanyLogo</a>
+                <div class="header-right">
+                <a href="#home">Home</a>
+                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+                </div>
+          </div>
+  
+          <div class="item3">
+              <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
+              <div id="myBtnContainer">
+                  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+                  <button class="btn" onclick="filterSelection('animes')"> Animées</button>
+                  <button class="btn" onclick="filterSelection('films')"> Films</button>
+                  <button class="btn" onclick="filterSelection('series')"> Séries</button>
+              </div>
+              <div class="row">
+  
+                  <div class="column animes">
+                      <div class="content">
+                          <a href="../view/Pays/Sao_Tome-et-Principe.html"></a><img src="./haikyuuu.jpg" alt=" haikyuuu" style="width:100%">
+                          </a><p> haikyuuu</p>
+                      </div>
+                  </div>
+                  <div class="column series">
+                      <div class="content">
+                          <a href="../view/Pays/Senegal.html"></a><img src="../source/img/Pays/Sénégal.jpg" alt=" Sénégal " style="width:100%">
+                          </a><p>Sénégal </p>
+                      </div>
+                  </div>
+                  <div class="column films">
+                      <div class="content">
+                          <a href="../view/Pays/Seychelles.html"></a><img src="../source/img/Pays/Seychelles.jpg" alt=" Seychelles " style="width:100%">
+                          </a><p>Seychelles </p>
+                      </div>
+                  </div>
+              </div>
+              <div class="item5">
+  
+              </div>
+          </div>
+      </div>
+      <script>
+          filterSelection("all")
+          function filterSelection(c) {
+              var x, i;
+              x = document.getElementsByClassName("column");
+              if (c == "all") c = "";
+              for (i = 0; i < x.length; i++) {
+                  w3RemoveClass(x[i], "show");
+                  if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+              }
+          }
+  
+          function w3AddClass(element, name) {
+              var i, arr1, arr2;
+              arr1 = element.className.split(" ");
+              arr2 = name.split(" ");
+              for (i = 0; i < arr2.length; i++) {
+                  if (arr1.indexOf(arr2[i]) == -1) { element.className += " " + arr2[i]; }
+              }
+          }
+  
+          function w3RemoveClass(element, name) {
+              var i, arr1, arr2;
+              arr1 = element.className.split(" ");
+              arr2 = name.split(" ");
+              for (i = 0; i < arr2.length; i++) {
+                  while (arr1.indexOf(arr2[i]) > -1) {
+                      arr1.splice(arr1.indexOf(arr2[i]), 1);
+                  }
+              }
+              element.className = arr1.join(" ");
+          }
+  
+  
+          // Add active class to the current button (highlight it)
+          var btnContainer = document.getElementById("myBtnContainer");
+          var btns = btnContainer.getElementsByClassName("btn");
+          for (var i = 0; i < btns.length; i++) {
+              btns[i].addEventListener("click", function () {
+                  var current = document.getElementsByClassName("active");
+                  current[0].className = current[0].className.replace(" active", "");
+                  this.className += " active";
+              });
+          }
+          // Get the button
+          let mybutton = document.getElementById("myBtn");
+  
+          // When the user scrolls down 20px from the top of the document, show the button
+          window.onscroll = function () { scrollFunction() };
+  
+          function scrollFunction() {
+              if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                  mybutton.style.display = "block";
+              } else {
+                  mybutton.style.display = "none";
+              }
+          }
+  
+          // When the user clicks on the button, scroll to the top of the document
+          function topFunction() {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+          }
+      </script>
+  </body>
+  </html>
+  
+  
+  <!--
+  
+  Asie
+      Abkhazie (territoire partiellement reconnu)
+      Haut-Karabagh (territoire disputé)
+      Hong Kong (région administrative spéciale de la Chine)
+      Macao (région administrative spéciale de la Chine)
+      Chypre du Nord (territoire partiellement reconnu)
+      Ossétie du Sud (territoire partiellement reconnu)
+  Europe
+      Gibraltar (territoire britannique)
+      Îles Féroé (territoire autonome du Danemark)
+      Kosovo (état partiellement reconnu)
+      Transnistrie (territoire disputé)
+  Amérique du Nord
+      Groenland (territoire autonome du Danemark)
+      Porto Rico (territoire non incorporé des États-Unis)
+      Bermudes (territoire britannique)
+      Groenland (territoire autonome danois)
+  
+  Océanie
+      Nouvelle-Calédonie (territoire français)
+      Polynésie française (territoire français)
+      Guam (territoire non incorporé des États-Unis)
+      Îles Mariannes du Nord (territoire non incorporé des États-Unis)
+      Pitcairn (territoire britannique)
+  -->
+  
